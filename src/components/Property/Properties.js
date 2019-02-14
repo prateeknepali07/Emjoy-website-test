@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class Property extends Component {
+class Properties extends Component {
   render() {
     return (
       <div>
@@ -15,4 +15,4 @@ class Property extends Component {
   }
 }
 
-export default Property;
+export default Properties;

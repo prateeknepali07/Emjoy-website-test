@@ -1,4 +1,5 @@
 const Menu = [
+
     {
         heading: 'Main Navigation',
         translate: 'sidebar.heading.HEADER'
@@ -14,8 +15,14 @@ const Menu = [
     {
         name: 'Property',
         icon: 'icon-pin',
-        path: 'Property-properties',
-        translate: 'sidebar.nav.property.Properties'
+        path: 'Properties',
+        translate: 'sidebar.nav.Property.Properties',
+        label: { value: 1, color: 'success' },
+        submenu: [{
+            name: 'Properties',
+            path: 'properties',
+            translate: 'sidebar.nav.Property'
+        }]
     },
     {
         name: 'User Management',
@@ -28,6 +35,7 @@ const Menu = [
         name: 'Tenant',
         icon: 'icon-tag',
         translate: 'sidebar.nav.tenant.TENANT',
+        label: { value: 6, color: 'success' },
         submenu: [{
             name: 'Tenant List',
             path: 'tenant-tenantlist',
@@ -66,6 +74,7 @@ const Menu = [
         name: 'Owner',
         icon: 'icon-bag',
         translate: 'sidebar.nav.owner.OWNER',
+        label: { value: 4, color: 'success' },
         submenu: [{
             name: 'OwnerInvoices',
             path: 'Owner-Invoices',

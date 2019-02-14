@@ -238,7 +238,7 @@ const Routes = ({ location }) => {
                                 <Route path="/Owner-ownerPayments" component={OwnerPayments} />
                                 <Route path="/Owner-propertylistrequest" component={Propertylistrequest} />
                                 {/*Property*/}
-                                <Route path="/Property-properties" component={Properties} />
+                                <Route path="/Property-Properties" component={Properties} />
                                 {/*Users*/}
                                 <Route path="/users" component={Users} />
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Input } from 'reactstrap';
+import axios from 'axios';
 
 import FormValidator from '../Forms/FormValidator.js';
 
@@ -19,6 +20,10 @@ class Login extends Component {
      * @param  {String} formName The name of the form in the state object
      * @return {Function} a function used for the event
      */
+
+
+
+
     validateOnChange = event => {
         const input = event.target;
         const form = input.form
@@ -39,6 +44,24 @@ class Login extends Component {
 
     }
 
+    onLogin = () => {
+        const body = {
+            email: this.state.formLogin.email,
+            password: this.state.formLogin.password
+        }
+        axios.post('https://api-dev.emjoy.co/api/user', {
+            header: {
+                "Api-version": 1,
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        }, body).then(res => {
+            console.log(res)
+        }).catch(error => {
+            console.log(error)
+        })
+
+
+    }
     onSubmit = e => {
         const form = e.target;
         const inputs = [...form.elements].filter(i => ['INPUT', 'SELECT'].includes(i.nodeName))
@@ -126,7 +149,7 @@ class Login extends Component {
                                     <Link to="recover" className="text-muted">Forgot your password?</Link>
                                 </div>
                             </div>
-                            <button className="btn btn-block btn-primary mt-3" type="submit">Login</button>
+                            <button className="btn btn-block btn-primary mt-3" type="submit" onClick={this.onLogin}>Login</button>
                         </form>
                         <p className="pt-3 text-center">Need to Signup?</p>
                         <Link to="register" className="btn btn-block btn-secondary">Register Now</Link>
@@ -136,9 +159,9 @@ class Login extends Component {
                     <span className="mr-2">&copy;</span>
                     <span>2018</span>
                     <span className="mx-2">-</span>
-                    <span>Angle</span>
+                    <span>Emjoy</span>
                     <br />
-                    <span>Bootstrap Admin Template</span>
+                    <span>Real Estate Company</span>
                 </div>
             </div>
         );
