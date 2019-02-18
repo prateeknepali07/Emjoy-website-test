@@ -112,6 +112,7 @@ import Propertylistrequest from './components/Owner/Propertylistrequest';
 
 import Properties from './components/Property/Properties';
 import Users from './components/User management/users';
+import Addproperty from './components/Property/Addproperty'
 
 // List of routes that uses the page layout
 // listed here to Switch between layouts
@@ -239,6 +240,7 @@ const Routes = ({ location }) => {
                                 <Route path="/Owner-propertylistrequest" component={Propertylistrequest} />
                                 {/*Property*/}
                                 <Route path="/properties" component={Properties} />
+                                <Route path="/Addproperty" component={Addproperty} />
                                 {/*Users*/}
                                 <Route path="/users" component={Users} />
 

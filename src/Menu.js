@@ -17,11 +17,16 @@ const Menu = [
         icon: 'icon-pin',
         path: 'Properties',
         translate: 'sidebar.nav.Property.Properties',
-        label: { value: 1, color: 'success' },
+        label: { value: 2, color: 'success' },
         submenu: [{
             name: 'Properties',
             path: 'properties',
             translate: 'sidebar.nav.Property'
+        },
+        {
+            name: 'Addproperty',
+            path: 'Addproperty',
+            translate: 'sidebar.nav.Addproperty'
         }]
     },
     {
