@@ -33,7 +33,14 @@ const Menu = [
         name: 'User Management',
         icon: 'icon-user-follow',
         path: 'users',
-        translate: 'sidebar.nav.user management.user'
+        translate: 'sidebar.nav.user management.user',
+        label: { value: 2, color: 'sucess' },
+        submenu: [{
+            name: 'User Details',
+            path: 'users',
+            translate: 'sidebar.nav.users'
+
+        }]
     },
 
     {
@@ -79,7 +86,7 @@ const Menu = [
         name: 'Owner',
         icon: 'icon-bag',
         translate: 'sidebar.nav.owner.OWNER',
-        label: { value: 4, color: 'success' },
+        label: { value: 5, color: 'success' },
         submenu: [{
             name: 'OwnerInvoices',
             path: 'Owner-Invoices',
@@ -99,6 +106,11 @@ const Menu = [
             name: 'Propertylistrequest',
             path: 'Owner-propertylistrequest',
             translate: 'sidebar.nav.owner.propertylistrequest'
+        },
+        {
+            name: 'OwnerLogin',
+            path: 'OwnerLogin',
+            translate: 'sidebar.nav.owner.OwnerLogin'
         }]
     },
 
