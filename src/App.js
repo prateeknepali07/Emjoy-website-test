@@ -10,7 +10,7 @@
  */
 
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import $ from 'jquery';
 
 // App Routes
@@ -21,6 +21,7 @@ import "./Vendor";
 // Application Styles
 import './styles/bootstrap.scss';
 import './styles/app.scss'
+import Login from './components/Pages/Login';
 
 // Disable warning "Synchronous XMLHttpRequest on the main thread is deprecated.."
 $.ajaxPrefilter(o => o.async = true);
@@ -36,9 +37,9 @@ class App extends Component {
     const basename = process.env.NODE_ENV === 'development' ? '/' : (WP_BASE_HREF || '/');
 
     return (
-        <BrowserRouter basename={basename}>
-            <Routes />
-        </BrowserRouter>
+      <BrowserRouter basename={basename}>
+        <Routes />
+      </BrowserRouter>
     );
 
   }

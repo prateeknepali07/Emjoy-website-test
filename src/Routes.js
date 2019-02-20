@@ -111,7 +111,7 @@ import Ownerlist from './components/Owner/Ownerlist';
 import Propertylistrequest from './components/Owner/Propertylistrequest';
 
 import Properties from './components/Property/Properties';
-import Users from './components/User management/users';
+import Users from './components/Usermanagement/user';
 import Addproperty from './components/Property/Addproperty';
 import OwnerLogin from './components/Owner/Ownerlogin';
 import Partnerlogin from './components/Partner/Partnerlogin';
@@ -151,8 +151,8 @@ const Routes = ({ location }) => {
             // Page Layout component wrapper
             <BasePage>
                 <Switch location={location}>
+                    <Route path="/" component={Login} exact />
 
-                    <Route path="/Login" component={Login} />
                     <Route path="/register" component={Register} />
                     <Route path="/recover" component={Recover} />
                     <Route path="/lock" component={Lock} />

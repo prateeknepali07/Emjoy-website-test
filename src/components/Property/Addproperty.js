@@ -14,7 +14,8 @@ class Addproperty extends Component {
       headers: {
         "Api-version": 1,
         "Content-Type": "application/x-www-form-urlencoded",
-        "authtoken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiRW1qb3kiLCJkYXRlIjoxNTUwNDc3ODYxODYyfQ.8jBV5355G8q88zhSo3-PG1cv84tVs-jSKU9z4ogh-FE"
+        "authtoken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiRW1qb3kiLCJkYXRlIjoxNTUwNDc3ODYxODYyfQ.8jBV5355G8q88zhSo3-PG1cv84tVs-jSKU9z4ogh-FE",
+        "ut": "pt"
       }
     }, body).then(res => {
       console.log(res)
@@ -147,7 +148,7 @@ class Addproperty extends Component {
           <FormGroup>
             <Label for="exampleCheckbox">Checkboxes</Label>
             <div>
-              <CustomInput type="checkbox" id="visibility" label="Visibility" />
+              <CustomInput type="checkbox" id="visibility" label="visibility" />
               <CustomInput type="checkbox" id="pet_allowed" label="Pet-Allowed" />
               <CustomInput type="checkbox" id="smoking" label="Smoking" />
             </div>

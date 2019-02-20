@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Input } from 'reactstrap';
 import axios from 'axios';
 
+
 import FormValidator from '../Forms/FormValidator.js';
 
 
@@ -45,16 +46,18 @@ class Login extends Component {
     }
 
     onLogin = () => {
+        console.log(this.state.formLogin)
         const body = {
-            email: this.state.formLogin.email,
-            password: this.state.formLogin.password
+            mobile: this.state.formLogin.email,
+            name: this.state.formLogin.password
         }
+        console.log(body)
         axios.post('https://api-dev.emjoy.co/api/user', {
             header: {
                 "Api-version": 1,
                 "Content-Type": "application/x-www-form-urlencoded"
             }
-        }, body).then(res => {
+        }, JSON.stringify(body)).then(res => {
             console.log(res)
         }).catch(error => {
             console.log(error)
@@ -99,14 +102,13 @@ class Login extends Component {
                     </div>
                     <div className="card-body">
                         <p className="text-center py-2">SIGN IN TO CONTINUE.</p>
-                        <form className="mb-3" name="formLogin" onSubmit={this.onSubmit}>
+                        <form className="mb-3" name="formLogin" onSubmit={event => event.preventDefault()}>
                             <div className="form-group">
                                 <div className="input-group with-focus">
-                                    <Input type="email"
+                                    <Input type="number"
                                         name="email"
                                         className="border-right-0"
                                         placeholder="Enter email"
-                                        invalid={this.hasError('formLogin', 'email', 'required') || this.hasError('formLogin', 'email', 'email')}
                                         onChange={this.validateOnChange}
                                         data-validate='["required", "email"]'
                                         value={this.state.formLogin.email} />
@@ -163,6 +165,7 @@ class Login extends Component {
                     <br />
                     <span>Real Estate Company</span>
                 </div>
+
             </div>
         );
     }
